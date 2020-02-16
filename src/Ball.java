@@ -7,14 +7,20 @@ class Ball {
     private static final int XSIZE = 20;
     private static final int YSIZE = 20;
     private int x = 0;
-    private int  y= 0;
+    private int y= 0;
     private int dx = 2;
     private int dy = 2;
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 
     public Ball(Component c){
         this.canvas = c;
-
 
         if(Math.random()<0.5){
             x = new Random().nextInt(this.canvas.getWidth());
