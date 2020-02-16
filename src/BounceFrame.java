@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 public class BounceFrame extends JFrame {
 
     private BallCanvas canvas;
-    public static final int WIDTH = 450;
-    public static final int HEIGHT = 350;
+    public static final int WIDTH = 900;
+    public static final int HEIGHT = 500;
 
     public BounceFrame() {
         this.setSize(WIDTH, HEIGHT);
@@ -30,11 +30,20 @@ public class BounceFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Ball b = new Ball(canvas);
-                canvas.add(b);
+                for (int i = 0; i < 1000; i++) {
+                    Ball b = new Ball(canvas, Color.blue);
+                    canvas.add(b);
 
-                BallThread thread = new BallThread(b);
+                    BallThread thread = new BallThread(b);
+                    thread.start();
+                    thread.setPriority(Thread.MIN_PRIORITY);
+                    System.out.println("Thread name = " + thread.getName());
+                }
+                Ball ball = new Ball(canvas, Color.yellow);
+                canvas.add(ball);
+                BallThread thread = new BallThread(ball);
                 thread.start();
+                thread.setPriority(Thread.MAX_PRIORITY);
                 System.out.println("Thread name = " + thread.getName());
             }
         });
