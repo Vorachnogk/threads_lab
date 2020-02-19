@@ -14,7 +14,6 @@ public class BallCanvas extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.setColor(Color.BLUE);
         for (int i = 0; i < balls.size(); i++) {
             Ball b = balls.get(i);
             b.draw(g2);

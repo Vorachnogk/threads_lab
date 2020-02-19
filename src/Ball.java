@@ -16,10 +16,6 @@ class Ball {
         this.color = color;
     }
 
-    public static void f() {
-        int a = 0;
-    }
-
     public void draw(Graphics2D g2) {
         g2.setColor(color);
         g2.fill(new Ellipse2D.Double(x, y, XSIZE, YSIZE));
