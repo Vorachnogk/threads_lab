@@ -21,7 +21,6 @@ public class TransferThread extends Thread {
                     Thread.sleep(1);
                 }
             }
-        } catch (InterruptedException e) {
-        }
+        } catch (InterruptedException e) {        }
     }
 }

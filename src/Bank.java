@@ -9,7 +9,6 @@ public class Bank {
         for (i = 0; i < accounts.length; i++)   // нарахувати на кожний рахунок 10 000
             accounts[i] = initialBalance;
         ntransacts = 0;
-
     }
 
     public synchronized void transfer(int from, int to, int amount) throws InterruptedException {
